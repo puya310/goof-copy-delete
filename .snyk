@@ -36,9 +36,6 @@ exclude:
     - '**/*test3.java'
     - node_modules
     - testfolder/**
-    - /Users/puyarajabian/Documents/apps/snyk-goof_copy/big_data.tf:
-        reason: file used for local testing
-        created: 2024-01-17T16:49:01.527Z
 custom_rules:
   - id: 'my custom password rule '
     description: 'Description of my custom rule '

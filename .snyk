@@ -19,6 +19,11 @@ ignore:
     - Users/puyarajabian/Documents/apps/snyk-goof/*:
         reason: why not1
         expires: 2025-10-07T00:00:00.000Z
+  SNYK-CC-00433:
+    - ‘/Users/puyarajabian/Documents/apps/snyk-goof_copy/big_data.tf’:
+        reason: None Given
+        expires: 2024-02-16T17:13:15.055Z
+        created: 2024-01-17T17:13:15.060Z
 # patches apply the minimum changes required to fix a vulnerability
 patch:
   'npm:http-signature:20150122':

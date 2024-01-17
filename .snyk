@@ -7,25 +7,90 @@ ignore:
         reason: example ignore via .snyk file
         expires: 2022-10-07T00:00:00.000Z
         created: 2022-09-30T15:11:42.190Z
-
-  npm:brace-expansion:20170302:
+  SNYK-JS-UGLIFYJS-1727251:
+    - '*':
+        reason: hello!
+        expires: 2025-10-07T00:00:00.000Z
+  'npm:brace-expansion:20170302':
     - '*':
         reason: why not
         expires: 2025-10-07T00:00:00.000Z
-  
   SNYK-JS-Y18N-1021887:
     - Users/puyarajabian/Documents/apps/snyk-goof/*:
         reason: why not1
         expires: 2025-10-07T00:00:00.000Z
-
 # patches apply the minimum changes required to fix a vulnerability
 patch:
   'npm:http-signature:20150122':
     - tap > codecov.io > request > http-signature:
         patched: '2020-02-07T14:30:00.093Z'
-
 exclude:
- global:
-  - test1/**  #anything under the test1 directory 
-  - "**/*test2*"     #any directory with 'test2' in it
-  - "**/*test3.java" #any file that ends in test3.java
+  global:
+    - test1/**
+    - '**/*routes*'
+    - '**/*test3.java'
+    - node_modules
+    - testfolder/**
+    - /Users/puyarajabian/Documents/apps/snyk-goof_copy/big_data.tf:
+        reason: file used for local testing
+        created: 2024-01-17T16:49:01.527Z
+custom_rules:
+  - id: 'my custom password rule '
+    description: 'Description of my custom rule '
+    severity: low
+    cwe: []
+    fix_analysis: |-
+      Details?
+
+      Prevention?
+      1. Don't
+      2. Expose
+      3. Passwords
+    rule_code: >-
+      "password"
+
+      # This example searches for string constants and identifiers (function or
+      variable names) in the code. This can be
+
+      # used to find sensitive hardcoded data such as passwords. You can also
+      use the following templates to search for
+
+      # strings or identifiers individually, and integers and booleans can be
+      looked up as well:
+
+      #     StringLiteral<"password">   - only finds string literals with the
+      given value
+
+      #     Identifier<"password">      - only finds identifiers (functions and
+      variable names) with the given value
+
+      #     NumberLiteral<1234>         - finds numbers (e.g. a port number)
+
+      #     BooleanLiteral<"true">      - finds boolean constants of value
+      "true" (note that capitalization matters -
+
+      #                                   Python takes an upper-case "True")
+
+      # Regular expressions (in Google re2 syntax) can be used in place of
+      strings as well. For example, the following
+
+      # query will match all string constants containing a "password" substring:
+
+      #     StringLiteral<~".*password.*">
+
+      # A wildcard predicate can be used to find any string, not just strings
+      matching a specified text:
+
+      #     StringLiteral<PRED:Any>
+    languages:
+      - apex
+      - c
+      - cpp
+      - csharp
+      - go
+      - java
+      - javascript
+      - php
+      - python
+      - ruby
+      - typescript

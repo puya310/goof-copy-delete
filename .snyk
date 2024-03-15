@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.25.0
+version: v1.25.1
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
   SNYK-JS-ISMYJSONVALID-597167:
@@ -29,6 +29,11 @@ patch:
   'npm:http-signature:20150122':
     - tap > codecov.io > request > http-signature:
         patched: '2020-02-07T14:30:00.093Z'
+  'npm:minimatch:20160620':
+    - tap > nyc > istanbul > fileset > glob > minimatch:
+        patched: '2024-03-15T02:29:11.537Z'
+        id: 'npm:minimatch:20160620'
+        path: tap > nyc > istanbul > fileset > glob > minimatch
 exclude:
   global:
     - test1/**
